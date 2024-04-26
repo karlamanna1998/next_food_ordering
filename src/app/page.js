@@ -9,7 +9,6 @@ import Footer from './components/layout/footer/footer'
 export default function Home() {
   return (
     <>
-      <Header />
       <Hero />
       <HomeMenu />
 
@@ -25,8 +24,7 @@ export default function Home() {
           <a href='tel:+918050259088' className='text-4xl underline text-gray-500'>+918050259088</a>
         </div>
       </section>
-      
-      <Footer />
+
     </>
   )
 }
