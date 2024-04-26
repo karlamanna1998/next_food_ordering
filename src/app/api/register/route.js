@@ -1,3 +1,20 @@
-export function POST(req){
-    return Response.json('ok')
+import mongoose from "mongoose"
+import { userModel } from "../models/userModel";
+// import { userModel } from "../models/userMOdel"
+
+export async function POST(req) {
+    try {
+        const body = await req.json()
+
+        await mongoose.connect(process.env.MONGO_URL)
+
+        const newUser = await userModel.create(body); 
+
+        // userModel
+        return Response.json({ data: newUser, message: 'user created' })
+
+    } catch (e) {
+        console.log(e, 'errrrrrrrr')
+        return Response.json(e.message)
+    }
 }
