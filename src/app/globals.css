@@ -13,12 +13,20 @@ input[type='text'] , input[type = 'password'] , input[type='email']{
     @apply w-full mb-2 border px-2 py-3 rounded-xl bg-gray-200
 }
 
+input[type='text']:disabled , input[type = 'password']:disabled , input[type='email']:disabled{
+    @apply bg-gray-300 cursor-not-allowed   
+}
+
 .button{
     @apply py-3 rounded-xl bg-white border-gray-300  border-2 text-gray-700 font-bold  w-full mb-2
 }
 
 button[type='submit']{
     @apply bg-primary text-white border-0 
+}
+
+button[type='submit']:disabled{
+    @apply opacity-50 cursor-not-allowed
 }
 
 
